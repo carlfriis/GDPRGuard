@@ -6,7 +6,7 @@ GDPRGuard = {}
 -- === VERSIONSTJEK === --
 local CURRENT_VERSION = "2.0.0"
 CreateThread(function()
-    PerformHttpRequest("https://raw.githubusercontent.com/dit-brugernavn/GDPRGuard/main/version.json", function(code, data)
+    PerformHttpRequest("https://github.com/carlfriis/GDPRGuard/blob/main/server.lua", function(code, data)
         if code == 200 then
             local ok, versionData = pcall(json.decode, data)
             if ok and versionData.version and versionData.version ~= CURRENT_VERSION then
